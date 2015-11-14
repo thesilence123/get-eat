@@ -5,9 +5,4 @@
 
 myApp.controller('customersCtrl', ['$scope', '$route', '$location',
     function ($scope, $route, $location) {
-        $scope.dishes = [
-            'מסבחה',
-            'חומוס',
-            'פיתה'
-        ]
 }]);

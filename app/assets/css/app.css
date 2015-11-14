@@ -59,8 +59,11 @@ md-grid-tile {
 md-button:hover{
   color: red;
 }
-/*.restaurant-logo{*/
-  /*width:66%;*/
-  /*height: auto;*/
-  /*display: inline-block;*/
+.restaurant-logo{
+    width:66%;
+    height: auto;
+    display: inline-block;
+}
+/*md-card {*/
+  /*height: 20px;*/
 /*}*/

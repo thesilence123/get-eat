@@ -2,52 +2,16 @@
 
     <section flex="70" layout="row" layout-align="start start">
         <div class='md-padding' layout="row" layout-wrap>
-            <md-card flex-sm="100" flex="40" ng-repeat="i in range(1)">
-                <img class="restaurant-logo" ng-src="app/assets/images/masabaha.jpg" class="md-card-image" alt="Washed Out">
+            <md-card flex-sm="100" flex="40" ng-repeat="restaurant in restaurants">
+                <img class="restaurant-logo" ng-src="{{restaurant.logo}}" class="md-card-image" alt="Washed Out">
                 <md-card-content>
-                    <h2 class="md-title">אבו חסן</h2>
+                    <h2 class="md-title">{{restaurant.name}}</h2>
 
-                    <p>כבר יותר מ40 שנה... המסבחה העסיסית ביותר</p>
-                    <p style="font-style: italic">מתחת לעץ 6, תל אביב-יפו</p>
+                    <p>{{restaurant.description}}</p>
+                    <p class="italic">{{restaurant.address}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="start start">
-                    <!--<md-button>מסבחה</md-button>-->
-                    <md-button flex="5" class="md-accent" ng-repeat="i in range(3)">{{dishes[i]}}</md-button>
-                    <!--<md-button>חומוס</md-button>-->
-                    <!--<md-button>פיתה</md-button>-->
-
-                </md-card-actions>
-            </md-card>
-            <md-card flex-sm="100" flex="40" ng-repeat="i in range(1)">
-                <img class="restaurant-logo" ng-src="app/assets/images/ali_logo.JPG" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">אבו חסן</h2>
-
-                    <p>כבר יותר מ40 שנה... המסבחה העסיסית ביותר</p>
-                    <p style="font-style: italic">מתחת לעץ 6, תל אביב-יפו</p>
-                </md-card-content>
-                <md-card-actions layout="row" layout-align="start start">
-                    <!--<md-button>מסבחה</md-button>-->
-                    <md-button flex="5" class="md-accent" ng-repeat="i in range(3)">{{dishes[i]}}</md-button>
-                    <!--<md-button>חומוס</md-button>-->
-                    <!--<md-button>פיתה</md-button>-->
-
-                </md-card-actions>
-            </md-card>
-            <md-card flex-sm="100" flex="40" ng-repeat="i in range(1)">
-                <img class="restaurant-logo" ng-src="app/assets/images/pizza.png" class="md-card-image" alt="Washed Out">
-                <md-card-content>
-                    <h2 class="md-title">אבו חסן</h2>
-
-                    <p>כבר יותר מ40 שנה... המסבחה העסיסית ביותר</p>
-                    <p style="font-style: italic">מתחת לעץ 6, תל אביב-יפו</p>
-                </md-card-content>
-                <md-card-actions layout="row" layout-align="start start">
-                    <!--<md-button>מסבחה</md-button>-->
-                    <md-button flex="5" class="md-accent" ng-repeat="i in range(3)">{{dishes[i]}}</md-button>
-                    <!--<md-button>חומוס</md-button>-->
-                    <!--<md-button>פיתה</md-button>-->
-
+                    <md-button flex="5" class="md-accent" ng-repeat="dish in restaurant.dishes">{{dish.name}}</md-button>
                 </md-card-actions>
             </md-card>
 

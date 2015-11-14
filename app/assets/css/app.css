@@ -59,6 +59,9 @@ md-grid-tile {
 md-button:hover{
   color: red;
 }
+.italic {
+  font-style: italic;
+}
 /*.restaurant-logo{*/
   /*width:66%;*/
   /*height: auto;*/

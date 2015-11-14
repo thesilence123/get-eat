@@ -10,10 +10,11 @@ myApp.controller('customersCtrl', ['$scope', '$route', '$location',
             'מסבחה',
             'חומוס',
             'פיתה'
-        ]
+        ];
         $scope.restaurants = [
             {
                 "name": "אבו חסן",
+                "description": "כבר יותר מ40 שנה... המסבחה העסיסית ביותר",
                 "logo": "app/assets/images/masabaha.jpg",
                 "phone": "03-6666666",
                 "address": "מתחת לעץ 6, תל אביב-יפו",

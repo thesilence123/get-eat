@@ -7,9 +7,14 @@ var myApp = angular.module('myApp', [
     'ngMaterial',
     'ngMdIcons'
 ]).
-config(['$routeProvider', 'cfpLoadingBarProvider', '$mdThemingProvider', function($routeProvider, cfpLoadingBarProvider, $mdThemingProvider) {
-        $mdThemingProvider.theme('default')
-            .primaryPalette('green')
-            .accentPalette('yellow');
-        cfpLoadingBarProvider.includeSpinner = true;
+config(['$routeProvider',
+        'cfpLoadingBarProvider',
+        '$mdThemingProvider',
+        function($routeProvider,
+                 cfpLoadingBarProvider,
+                 $mdThemingProvider) {
+            $mdThemingProvider.theme('default')
+                .primaryPalette('green')
+                .accentPalette('pink');
+            cfpLoadingBarProvider.includeSpinner = true;
     }]);

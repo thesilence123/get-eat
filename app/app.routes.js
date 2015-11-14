@@ -4,13 +4,13 @@
 'use strict';
 myApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/Bussiness', {
-        templateUrl: 'app/components/my passion/my passion.html',
-        controller: 'techCtrl',
+        templateUrl: 'app/components/business/orders.html',
+        controller: 'businessCtrl',
         activeTab: 'My Passion'
     })
         .when('/Customers', {
-            templateUrl: 'app/components/about/about.html',
-            controller: 'aboutCtrl',
+            templateUrl: 'app/components/customers/restaurants.html',
+            controller: 'customersCtrl',
             activeTab: 'About'
         })
         .otherwise({redirectTo: '/Customers'})

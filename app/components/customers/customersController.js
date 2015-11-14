@@ -3,15 +3,6 @@
  */
 'use strict';
 
-myApp.controller('HomeCtrl', ['$scope', '$route', '$location',
+myApp.controller('customersCtrl', ['$scope', '$route', '$location',
     function ($scope, $route, $location) {
-    $scope.title = 'BringEat';
-
-    $scope.switchTab = function(tab) {
-        $location.path('/' + tab);
-    };
-    $scope.$route = $route;
-    $scope.getYear = function(){
-        return new Date().getFullYear();
-    };
 }]);

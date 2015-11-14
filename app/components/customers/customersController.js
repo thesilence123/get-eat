@@ -6,6 +6,7 @@
 myApp.controller('customersCtrl', ['$scope', '$route', '$location',
     function ($scope, $route, $location) {
 
+
         $scope.restaurants = [
             {
                 "name": "abu hassan",
@@ -77,6 +78,7 @@ myApp.controller('customersCtrl', ['$scope', '$route', '$location',
             {
                 "restaurantName": "ignore",
                 "restaurantDisplayName": "דוגמה",
+                "amount": 0,
                 "dish": "מנה גדולה מאוד מאוד"
             }
         ];

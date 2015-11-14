@@ -70,3 +70,7 @@ md-button:hover{
   height: auto;
   display: inline-block;
 }
+.myGrid {
+  width: 500px;
+  height: 500px;
+}

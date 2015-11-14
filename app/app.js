@@ -1,11 +1,12 @@
 'use strict';
 
 var myApp = angular.module('myApp', [
-  'ngRoute',
-  'angular-loading-bar',
-  'ngAnimate',
+    'ngRoute',
+    'angular-loading-bar',
+    'ngAnimate',
     'ngMaterial',
-    'ngMdIcons'
+    'ngMdIcons',
+    'ui.grid'
 ]).
 config(['$routeProvider',
         'cfpLoadingBarProvider',

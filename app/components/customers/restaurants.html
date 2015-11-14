@@ -1,8 +1,8 @@
-<article layout="row" layout-align="start start">
+<article layout="row" layout-sm="column" layout-align="start start">
 
-    <section flex="70" layout="row" layout-align="start start">
+    <section flex="70" flex-order-sm="2" layout="row" layout-align="start start">
         <div class='md-padding' layout="row" layout-wrap>
-            <md-card flex-sm="100" flex="25" ng-repeat="restaurant in restaurants">
+            <md-card flex-sm="100" flex="30" ng-repeat="restaurant in restaurants">
                 <img class="restaurant-logo" ng-src="{{restaurant.logo}}" class="md-card-image" alt="Washed Out">
                 <md-card-content>
                     <h2 class="md-title">{{restaurant.displayName}}</h2>
@@ -19,12 +19,12 @@
         </div>
 
     </section>
-    <section flex="30" class="shoppingCart">
+    <section flex="30" flex-order-sm="1" ng-class="shoppingCart">
         <md-card>
             <md-card-content>
                 <h2 class="md-title">עגלת קניות:</h2>
                 <md-chips ng-model="orders" readonly="false" placeholder="עוד רעב?"
-                          secondary-placeholder="מה בא לך מהתפריט?">
+                          secondary-placeholder="העגלה ריקה... מה בא לך?">
                     <md-chip-template>
                         <strong>{{$chip["dish"]}}</strong>
                         <em>({{$chip["restaurantDisplayName"]}})</em>

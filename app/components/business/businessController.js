@@ -6,25 +6,49 @@
  */
 'use strict';
 
-myApp.controller('businessCtrl', ['$scope', '$route', '$location',
-    function ($scope, $route, $location) {
-        $scope.title = 'BringEat';
-
-        $scope.switchTab = function(tab) {
-            $location.path('/' + tab);
+myApp.controller('businessCtrl', [
+    '$scope',
+    '$route',
+    '$location',
+    '$mdToast',
+    '$document',
+    function ($scope,
+              $route,
+              $location,
+              $mdToast,
+              $document) {
+        $scope.showSimpleToast = function() {
+            $mdToast.show(
+                $mdToast.simple()
+                    .content('Simple Toast!')
+                    .hideDelay(3000)
+                    .capsule(true)
+            );
         };
-        $scope.$route = $route;
-        $scope.getYear = function(){
-            return new Date().getFullYear();
-        };
-        $scope.range = function(count){
-
-            var array = [];
-
-            for (var i = 0; i < count; i++) {
-                array.push(i)
+        $scope.myData = [
+            {
+                "שעה": "12:35",
+                "טלפון": "0524244204",
+                "כתובת": "חנה רובינא 7, תל אביב",
+                "מנה": "פיצה",
+                "כמות": "6",
+                "הערות": "עם פפרוני"
+            },
+            {
+                "שעה": "10:36",
+                "טלפון": "0566666666",
+                "כתובת": "בסיס גלילות",
+                "מנה": "פיצה",
+                "כמות": "42",
+                "הערות": "לחיילים בשמירה"
+            },
+            {
+                "שעה": "9:41",
+                "טלפון": "0527777777",
+                "כתובת": "מתחת לעץ 6, קריית אונו",
+                "מנה": "לחם שום",
+                "כמות": "6",
+                "הערות": "סטייל"
             }
-
-            return array;
-        }
+        ]
     }]);

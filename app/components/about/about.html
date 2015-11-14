@@ -1,0 +1,43 @@
+<md-content flex layout="column" layout-align="space-around start">
+    <md-card>
+        <img ng-src="app/assets/images/profile.jpg" class="md-card-image" alt="Washed Out">
+        <md-card-content>
+            <h2 class="md-title">Software Developer & Entrepreneur</h2>
+
+            <p>Like Running and lifting</p>
+            <p>Please get in touch!</p>
+        </md-card-content>
+        <div class="md-actions" layout="row" layout-align="end center">
+            <md-fab-speed-dial flex md-direction="right"
+                               class='md-scale' md-open="infoOpen" ng-mouseenter="infoOpen=true" ng-mouseleave="infoOpen=false">
+                <md-fab-trigger>
+                    <md-button aria-label="menu" class="md-fab md-accent">
+                        <ng-md-icon icon="person"></ng-md-icon>
+                    </md-button>
+                </md-fab-trigger>
+                <md-fab-actions>
+
+
+                    <md-button href="https://il.linkedin.com/pub/amit-eliav/ba/916/b67" aria-label="linkedin" class="md-fab md-raised md-mini"
+                               ng-mouseenter="changeColor('linkedin', '#006FA6')" ng-mouseleave="changeColor('linkedin', 'black')">
+                        <ng-md-icon icon="linkedin-box" ng-style="styles.linkedin"></ng-md-icon>
+                    </md-button>
+                    <md-button href="https://www.facebook.com/amiteliav1" aria-label="Facebook" class="md-fab md-raised md-mini"
+                               ng-mouseenter="changeColor('facebook', '#3A5795')" ng-mouseleave="changeColor('facebook', 'black')">
+                        <ng-md-icon icon="facebook-box" ng-style="styles.facebook"></ng-md-icon>
+                    </md-button>
+                    <md-button href="https://plus.google.com/u/0/106470730688347453657/posts" aria-label="GooglePlus" class="md-fab md-raised md-mini"
+                               ng-mouseenter="changeColor('googleplus', '#E53935')" ng-mouseleave="changeColor('googleplus', 'black')">
+                        <ng-md-icon icon="google-plus-box" ng-style="styles.googleplus"></ng-md-icon>
+                    </md-button>
+                    <md-button href="mailto:amiteliav1@gmail.com?subject=Hi%20Amit" aria-label="E-Mail" class="md-fab md-raised md-mini"
+                               ng-mouseenter="changeColor('email', '#d14836')" ng-mouseleave="changeColor('email', 'black')">
+                        <ng-md-icon icon="email" ng-style="styles.email"></ng-md-icon>
+                    </md-button>
+                </md-fab-actions>
+            </md-fab-speed-dial>
+
+        </div>
+    </md-card>
+
+</md-content>

@@ -62,8 +62,11 @@ md-button:hover{
 .italic {
   font-style: italic;
 }
-/*.restaurant-logo{*/
-  /*width:66%;*/
-  /*height: auto;*/
-  /*display: inline-block;*/
-/*}*/
+.shoppingCart {
+  position: fixed;
+}
+.restaurant-logo{
+  width:66%;
+  height: auto;
+  display: inline-block;
+}

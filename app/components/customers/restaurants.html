@@ -2,16 +2,17 @@
 
     <section flex="70" layout="row" layout-align="start start">
         <div class='md-padding' layout="row" layout-wrap>
-            <md-card flex-sm="100" flex="40" ng-repeat="restaurant in restaurants">
+            <md-card flex-sm="100" flex="25" ng-repeat="restaurant in restaurants">
                 <img class="restaurant-logo" ng-src="{{restaurant.logo}}" class="md-card-image" alt="Washed Out">
                 <md-card-content>
-                    <h2 class="md-title">{{restaurant.name}}</h2>
+                    <h2 class="md-title">{{restaurant.displayName}}</h2>
 
                     <p>{{restaurant.description}}</p>
                     <p class="italic">{{restaurant.address}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="start start">
-                    <md-button flex="5" class="md-accent" ng-repeat="dish in restaurant.dishes">{{dish.name}}</md-button>
+                    <md-button flex="5" class="md-accent" ng-repeat="dish in restaurant.dishes"
+                            ng-click="addOrder(restaurant.name, restaurant.displayName, dish.name)">{{dish.name}}</md-button>
                 </md-card-actions>
             </md-card>
 
@@ -19,15 +20,17 @@
 
     </section>
     <section flex="30" class="shoppingCart">
-        <md-card ng-repeat="i in range(1)">
+        <md-card>
             <md-card-content>
                 <h2 class="md-title">עגלת קניות:</h2>
-                <md-chips ng-model="dishes" readonly="false">
+                <md-chips ng-model="orders" readonly="false" placeholder="עוד רעב?"
+                          secondary-placeholder="מה בא לך מהתפריט?">
                     <md-chip-template>
-                        <strong>{{$chip}}</strong>
-                        <em>(אבו חסן)</em>
+                        <strong>{{$chip["dish"]}}</strong>
+                        <em>({{$chip["restaurantDisplayName"]}})</em>
                     </md-chip-template>
                 </md-chips>
+                <md-button class="md-warn md-raised">הזמן!</md-button>
             </md-card-content>
         </md-card>
     </section>

@@ -11,7 +11,7 @@
                     <p class="italic">{{restaurant.address}}</p>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="start start">
-                    <md-button flex="5" class="md-accent" ng-repeat="dish in restaurant.dishes"
+                    <md-button flex="5" class="md-primary md-hue-2" ng-repeat="dish in restaurant.dishes"
                             ng-click="addOrder(restaurant.name, restaurant.displayName, dish.name)">{{dish.name}}</md-button>
                 </md-card-actions>
             </md-card>

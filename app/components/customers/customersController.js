@@ -15,6 +15,8 @@ myApp.controller('customersCtrl', ['$scope',
                     .content('Simple Toast!')
                     .hideDelay(3000)
                     .capsule(true)
+                    .position('upper left')
+                    .theme("md-primary")
             );
         };
 
@@ -79,6 +81,27 @@ myApp.controller('customersCtrl', ['$scope',
                     {
                         "name": "וויסקי",
                         "price": "600"
+                    }
+                ]
+            },
+            {
+                "name": "dan-dan",
+                "displayName": "פיצה דן דן",
+                "description": "הפיצה הטובה של הדר יוסף",
+                "logo": "app/assets/images/dan-dan.jpg",
+                "phone": "03-6666666",
+                "address": "שלום אש 20, תל אביב",
+                "dishes": [{
+                    "name": "פיצה",
+                    "price": "66"
+                    },
+                    {
+                        "name": "לחם שום",
+                        "price": "66"
+                    },
+                    {
+                        "name": "רוטב שום",
+                        "price": "2"
                     }
                 ]
             }

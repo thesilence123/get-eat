@@ -23,6 +23,8 @@ myApp.controller('businessCtrl', [
                     .content('Simple Toast!')
                     .hideDelay(3000)
                     .capsule(true)
+                    .position('upper left')
+                    .theme("md-primary")
             );
         };
         $scope.myData = [

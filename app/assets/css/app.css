@@ -74,3 +74,6 @@ md-button:hover{
   width: 500px;
   height: 500px;
 }
+md-toast.md-success-toast-theme {
+  background-color: red;
+}

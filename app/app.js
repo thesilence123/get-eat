@@ -7,8 +7,12 @@ var myApp = angular.module('myApp', [
     'ngMaterial',
     'ngMdIcons',
     'ui.grid'
-]).
-config(['$routeProvider',
+])
+    //.constant("constants", {
+    //    "SITE_URL": "https://demo1401836.mockable.io"
+    //
+    //})
+    .config(['$routeProvider',
         'cfpLoadingBarProvider',
         '$mdThemingProvider',
         function($routeProvider,
@@ -18,4 +22,5 @@ config(['$routeProvider',
                 .primaryPalette('green')
                 .accentPalette('pink');
             cfpLoadingBarProvider.includeSpinner = true;
-    }]);
+    }])
+    .constant('SITE_URL', 'https://demo1401836.mockable.io');

@@ -27,7 +27,7 @@ myApp.factory('businessService', function($http, SITE_URL) {
 
     return {
         getColumns: function() {
-            var columns = []
+            var columns = [];
             angular.forEach(translationDictionary, function(hebrewName, englishName) {
                 columns.push(hebrewName)
             });

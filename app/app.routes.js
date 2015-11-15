@@ -3,7 +3,7 @@
  */
 'use strict';
 myApp.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/business', {
+    $routeProvider.when('/businesses', {
         templateUrl: 'app/components/business/orders.html',
         controller: 'businessCtrl'
     })
@@ -11,6 +11,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/components/customers/restaurants.html',
             controller: 'customersCtrl'
         })
-        .otherwise({redirectTo: '/Customers'})
+        .otherwise({redirectTo: '/customers'})
     ;
 }]);

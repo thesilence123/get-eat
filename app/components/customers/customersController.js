@@ -3,9 +3,20 @@
  */
 'use strict';
 
-myApp.controller('customersCtrl', ['$scope', '$route', '$location',
-    function ($scope, $route, $location) {
-
+myApp.controller('customersCtrl', ['$scope',
+    '$route',
+    '$location',
+    '$mdToast',
+    '$document',
+    function ($scope, $route, $location, $mdToast, $document) {
+        $scope.showSimpleToast = function() {
+            $mdToast.show(
+                $mdToast.simple()
+                    .content('Simple Toast!')
+                    .hideDelay(3000)
+                    .capsule(true)
+            );
+        };
 
         $scope.restaurants = [
             {

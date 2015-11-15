@@ -5,7 +5,7 @@
 
 myApp.controller('homeCtrl', ['$scope', '$route', '$location',
     function ($scope, $route, $location) {
-        $scope.title = 'BringEat';
+        $scope.title = 'GetEat';
         $scope.getYear = function(){
             return new Date().getFullYear();
         };

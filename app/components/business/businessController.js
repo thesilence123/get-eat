@@ -26,7 +26,7 @@ myApp.controller('businessCtrl', [
                 console.log(orders);
                 $scope.myData = orders;
             });
-        };
+        }();
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()
@@ -38,7 +38,6 @@ myApp.controller('businessCtrl', [
             );
         };
         $scope.myData = [];
-        updateData();
         $interval(updateData, 1000);
         $scope.gridOptions = {
             data: $scope.myData,

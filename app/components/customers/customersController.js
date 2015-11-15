@@ -20,6 +20,7 @@ myApp.controller('customersCtrl', ['$scope',
             );
         };
 
+        // To be recieved from the REST API
         $scope.restaurants = [
             {
                 "name": "abu hassan",
@@ -107,6 +108,7 @@ myApp.controller('customersCtrl', ['$scope',
             }
         ];
 
+        // 2-way-binded to the chips of the shopping cart
         $scope.orders = [
             // recieves in the form of:
             {
@@ -117,6 +119,7 @@ myApp.controller('customersCtrl', ['$scope',
             }
         ];
 
+        // Called from the dishes buttons
         $scope.addOrder = function(restaurantName, restaurantDisplayName, dish){
             $scope.orders.push(
                 {

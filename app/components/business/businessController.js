@@ -13,17 +13,20 @@ myApp.controller('businessCtrl', [
     '$mdToast',
     '$document',
     'businessService',
+    '$interval',
     function ($scope,
               $route,
               $location,
               $mdToast,
               $document,
-              businessService) {
-
-        businessService.getOrders().then(function(orders) {
-            console.log(orders);
-            $scope.myData = orders;
-        });
+              businessService,
+              $interval) {
+        var updateData = function() {
+            businessService.getOrders().then(function (orders) {
+                console.log(orders);
+                $scope.myData = orders;
+            });
+        };
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()
@@ -35,6 +38,8 @@ myApp.controller('businessCtrl', [
             );
         };
         $scope.myData = [];
+        updateData();
+        $interval(updateData, 1000);
         $scope.gridOptions = {
             data: $scope.myData,
             columnDefs: businessService.getColumns()

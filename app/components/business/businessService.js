@@ -37,7 +37,6 @@ myApp.factory('businessService', function($http, SITE_URL) {
             //return the promise directly.
             return $http.get(SITE_URL + '/api/orders')
                 .then(function(result) {
-                    console.log(result);
                     //resolve the promise as the data
                     var orders = result.data;
                     var hebrewVersion = translateOrders(orders);

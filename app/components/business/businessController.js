@@ -23,10 +23,9 @@ myApp.controller('businessCtrl', [
               $interval) {
         var updateData = function() {
             businessService.getOrders().then(function (orders) {
-                console.log(orders);
                 $scope.myData = orders;
             });
-        }();
+        };
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()
@@ -38,9 +37,11 @@ myApp.controller('businessCtrl', [
             );
         };
         $scope.myData = [];
-        $interval(updateData, 1000);
+        updateData();
+        $interval(updateData, 5000);
         $scope.gridOptions = {
             data: $scope.myData,
+            enableColumnResizing: true,
             columnDefs: businessService.getColumns()
         }
     }]);

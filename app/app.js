@@ -6,7 +6,8 @@ var myApp = angular.module('myApp', [
     'ngAnimate',
     'ngMaterial',
     'ngMdIcons',
-    'ui.grid'
+    'ui.grid',
+    'ui.grid.resizeColumns'
 ])
     //.constant("constants", {
     //    "SITE_URL": "https://demo1401836.mockable.io"

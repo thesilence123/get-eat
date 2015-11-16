@@ -17,8 +17,9 @@
   </head>
   <body>
         <header>
-          <md-toolbar layout="row" layout-align="space-between center">
-            <span> <h2 class="md-toolbar-tools"> {{title}} </h2></span>
+          <md-toolbar layout="row" layout-align="start center">
+            <h2 flex="90" class="md-toolbar-tools"> {{title}} </h2>
+            <md-button flex="10" ng-click="showAdvanced($event)" ng-model="accountDetails" ng-disabled="!(accountDetails['firstName'] === undefined)">שלום {{accountDetails.firstName === undefined ? "אורח": accountDetails.firstName}}!</md-button>
           </md-toolbar>
         </header>
         <ng-view></ng-view>
@@ -49,6 +50,7 @@
     <script defer src="app/app.js"></script>
     <script defer src="app/app.routes.js"></script>
     <script defer src="app/shared/Home/homeController.js"></script>
+    <script defer src="app/components/customers/customersService.js"></script>
     <script defer src="app/components/customers/customersController.js"></script>
     <script defer src="app/components/business/businessService.js"></script>
     <script defer src="app/components/business/businessController.js"></script>

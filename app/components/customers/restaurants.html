@@ -1,5 +1,4 @@
 <article layout="row" layout-sm="column" layout-align="start start">
-
     <section flex="70" flex-order-sm="2" layout="row" layout-align="start start">
         <div class='md-padding' layout="row" layout-wrap>
             <md-card flex-sm="100" flex="30" ng-repeat="restaurant in restaurants">
@@ -30,7 +29,7 @@
                         <em>({{$chip["restaurantDisplayName"]}})</em>
                     </md-chip-template>
                 </md-chips>
-                <md-button ng-click="order()" class="md-warn md-raised">הזמן!</md-button>
+                <md-button ng-click="order($event)" class="md-warn md-raised">הזמן!</md-button>
             </md-card-content>
         </md-card>
     </section>

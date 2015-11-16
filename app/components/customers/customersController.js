@@ -8,7 +8,10 @@ myApp.controller('customersCtrl', ['$scope',
     '$location',
     '$mdToast',
     '$document',
-    function ($scope, $route, $location, $mdToast, $document) {
+    'customersService',
+    '$mdDialog',
+    function ($scope, $route, $location, $mdToast, $document, customersService,
+    $mdDialog) {
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()
@@ -19,10 +22,51 @@ myApp.controller('customersCtrl', ['$scope',
                     .theme("md-primary")
             );
         };
-        $scope.order = function(){
-            $scope.showSimpleToast();
-            $scope.orders = []
+        $scope.order = function(ev){
+
+            if ($scope.accountDetails.address === undefined) {
+                $scope.showAdvanced(ev)
+            }
+            else {
+                customersService.postOrder().then(function (customerDetails) {
+                    $scope.showSimpleToast();
+                    $scope.orders = []    // Empty shopping cart
+                }, function () {
+                    // TODO: Show toast error
+                });
+            }
         };
+        $scope.getCustomerDetails = function () {
+            customersService.getCustomerDetails().then(function (details) {
+                $scope.$parent.accountDetails = details;
+            })
+        };
+        $scope.getCustomerDetails();
+        $scope.showAdvanced = function(ev) {
+            $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: '/app/shared/Home/login.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                })
+                .then(function () {
+                    $scope.getCustomerDetails();  // Update the session after login
+                }, function () {
+                });
+        };
+        function DialogController($scope, $mdDialog) {
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+        }
+
         // To be recieved from the REST API
         $scope.restaurants = [
             {
@@ -114,12 +158,12 @@ myApp.controller('customersCtrl', ['$scope',
         // 2-way-binded to the chips of the shopping cart
         $scope.orders = [
             // recieves in the form of:
-            {
-                "restaurantName": "ignore",
-                "restaurantDisplayName": "דוגמה",
-                "amount": 0,
-                "dish": "מנה גדולה מאוד מאוד"
-            }
+            //{
+            //    "restaurantName": "ignore",
+            //    "restaurantDisplayName": "דוגמה",
+            //    "amount": 0,
+            //    "dish": "מנה גדולה מאוד מאוד"
+            //}
         ];
 
         // Called from the dishes buttons
@@ -132,5 +176,6 @@ myApp.controller('customersCtrl', ['$scope',
                 }
             );
         }
+
 
 }]);

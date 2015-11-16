@@ -19,7 +19,10 @@ myApp.controller('customersCtrl', ['$scope',
                     .theme("md-primary")
             );
         };
-
+        $scope.order = function(){
+            $scope.showSimpleToast();
+            $scope.orders = []
+        };
         // To be recieved from the REST API
         $scope.restaurants = [
             {

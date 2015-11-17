@@ -15,22 +15,22 @@ myApp.controller('customersCtrl', ['$scope',
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()
-                    .content('Simple Toast!')
+                    .content('הוזמן! חצי שעה אצלך ;)')
                     .hideDelay(3000)
                     .capsule(true)
                     .position('upper left')
                     .theme("md-primary")
             );
         };
+
         $scope.order = function(ev){
 
             if ($scope.accountDetails.address === undefined) {
                 $scope.showAdvanced(ev)
-            }
-            else {
-                customersService.postOrder().then(function (customerDetails) {
+            } else {
+                customersService.postOrder($scope.orders).then(function (data) {
                     $scope.showSimpleToast();
-                    $scope.orders = []    // Empty shopping cart
+                    $scope.orders = [];  // Empty shopping cart
                 }, function () {
                     // TODO: Show toast error
                 });
@@ -42,31 +42,6 @@ myApp.controller('customersCtrl', ['$scope',
             })
         };
         $scope.getCustomerDetails();
-        $scope.showAdvanced = function(ev) {
-            $mdDialog.show({
-                    controller: DialogController,
-                    templateUrl: '/app/shared/Home/login.html',
-                    parent: angular.element(document.body),
-                    targetEvent: ev,
-                    clickOutsideToClose: true
-                })
-                .then(function () {
-                    $scope.getCustomerDetails();  // Update the session after login
-                }, function () {
-                });
-        };
-        function DialogController($scope, $mdDialog) {
-            $scope.hide = function () {
-                $mdDialog.hide();
-            };
-            $scope.cancel = function () {
-                $mdDialog.cancel();
-            };
-            $scope.answer = function (answer) {
-                $mdDialog.hide(answer);
-            };
-        }
-
         // To be recieved from the REST API
         $scope.restaurants = [
             {

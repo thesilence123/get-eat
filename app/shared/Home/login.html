@@ -40,13 +40,16 @@
             </div>
         </md-dialog-content>
         <div class="md-actions" layout="row" layout-align="start space-between">
-            <md-button type="submit" flex="10" class="md-primary" ng-click="answer('useful')" md-autofocus>
+            <md-button type="submit" flex="10" class="md-raised md-primary" ng-click="answer('useful')" md-autofocus>
                 היכנס
             </md-button>
-            <md-button type="submit" flex="10" class="md-warn" ng-click="answer('not useful')" >
+            <md-button type="submit" flex="10" class="md-raised md-accent md-hue-2" ng-click="answer('not useful')" >
                 הירשם
             </md-button>
             <span flex></span>
+            <md-button flex="5" class="md-warn" ng-click="answer('cancel')" >
+                ביטול
+            </md-button>
         </div>
     </form>
 </md-dialog>

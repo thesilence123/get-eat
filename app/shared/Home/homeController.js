@@ -20,6 +20,7 @@ myApp.controller('homeCtrl', ['$scope', '$route', '$location',
                 })
                 .then(function (customerDetails) {
                 }, function () {
+
                 });
         };
         function DialogController($scope, $mdDialog) {

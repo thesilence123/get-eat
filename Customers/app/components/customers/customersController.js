@@ -12,6 +12,32 @@ myApp.controller('customersCtrl', ['$scope',
     '$mdDialog',
     function ($scope, $route, $location, $mdToast, $document, customersService,
     $mdDialog) {
+        $scope.mainDishes = ['פיצה', 'לחם שום'];
+        $scope.toppings = ['זיתים ירוקים', 'זיתים שחורים', 'אננס', 'טונה', 'פיטריות'];
+        $scope.showMenu = function(ev) {
+            $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: '/app/components/customers/menu.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true
+                })
+                .then(function (customerDetails) {
+                }, function () {
+
+                });
+        };
+        function DialogController($scope, $mdDialog) {
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+        }
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()

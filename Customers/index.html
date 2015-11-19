@@ -43,7 +43,8 @@
             </div>
             <p id="order-title">סל הקניות</p>
             <hr/>
-            <div id="order-button">
+            <p ng-if="items_in_cart == {}" id="no-items">{{no_items_message}}</p>
+            <div ng-click="submit_order(3)" id="order-button">
                 <p>הזמן</p>
             </div>
         </section>

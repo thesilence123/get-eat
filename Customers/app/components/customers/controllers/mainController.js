@@ -47,4 +47,10 @@ myApp.controller('MainCtrl', ['$scope',
         };
         
         $scope.total_price = 100;
+        $scope.no_items_message = "תתחילו להוסיף מוצרים!";
+        $scope.items_in_cart = {};
+        
+        $scope.submit_order = function(order) {
+            alert('Congrats! Food food food!')
+        }
 }]);

@@ -1,0 +1,47 @@
+<md-dialog aria-label="Login"  ng-cloak>
+    <form>
+
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+            <div class="md-dialog-content">
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>שם פרטי</label>
+                        <input ng-model="user.firstName" >
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>שם משפחה</label>
+                        <input ng-model="theMax">
+                    </md-input-container>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <md-icon flex md-svg-src="app/assets/images/webstorm.svg" class="webstorm"></md-icon>
+                    <input required type="email" name="clientEmail" ng-model="project.clientEmail"
+                           minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                    <div ng-messages="projectForm.clientEmail.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+
+                        </div>
+                    </div>
+                </md-input-container>
+                <!--<md-input-container class="md-block">-->
+                <!--&lt;!&ndash; Use floating placeholder instead of label &ndash;&gt;-->
+                <!--<md-icon md-svg-src="email" class="email"></md-icon>-->
+                <!--<input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">-->
+                <!--</md-input-container>-->
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row" layout-align="start space-between">
+            <md-button type="submit" flex="10" class="md-raised md-primary" ng-click="answer('useful')" md-autofocus>
+                היכנס
+            </md-button>
+            <md-button type="submit" flex="10" class="md-raised md-accent md-hue-2" ng-click="answer('not useful')" >
+                הירשם
+            </md-button>
+            <span flex></span>
+            <md-button flex="5" class="md-warn" ng-click="answer('cancel')" >
+                ביטול
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

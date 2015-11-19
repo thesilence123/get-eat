@@ -7,10 +7,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'app/components/business/orders.html',
         controller: 'businessCtrl'
     })
-        .when('/customers', {
-            templateUrl: 'app/components/customers/restaurants.html',
-            controller: 'customersCtrl'
-        })
-        .otherwise({redirectTo: '/customers'})
+        .otherwise({redirectTo: '/businesses'})
     ;
 }]);

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Amit on 9/19/2015.
  */
 'use strict';
@@ -10,8 +10,46 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
     '$document',
     'customersService',
     '$mdDialog',
+
     function ($scope, $route, $location, $mdToast, $document, customersService,
-    $mdDialog) {
+    $mdDialog, $rootScope) {
+
+        $scope.showMenu = function(ev) {
+            $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: '/app/components/customers/menu.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true,
+                    locals: {
+                        mainDishes: $scope.mainDishes,
+                        toppings: $scope.toppings
+                    },
+                    bindToController: true
+                })
+                .then(function (customerDetails) {
+                }, function () {
+
+                });
+        };
+        $scope.mainDishes = ['פיצה', 'לחם שום'];
+        $scope.toppings = ['זיתים ירוקים', 'זיתים שחורים', 'אננס', 'פפרוני', 'פטריות'];
+        function DialogController($scope, $mdDialog, mainDishes, toppings) {
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+            console.log(mainDishes);
+            $scope.mainDishes = mainDishes;
+            $scope.toppings = toppings;
+            $scope.mainDish = '1';
+            $scope.toppingsSelected = [false, false, false, false, false];
+        }
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()
@@ -151,7 +189,7 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                     "dish": dish
                 }
             );
-        };
-        
-        
+        }
+
+
 }]);

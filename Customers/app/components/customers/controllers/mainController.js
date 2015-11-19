@@ -45,4 +45,6 @@ myApp.controller('MainCtrl', ['$scope',
             $scope.active_classes.shawarma = !($scope.active_classes.shawarma);
             $location.path('/shawarma');
         };
+        
+        $scope.total_price = 100;
 }]);

@@ -37,11 +37,18 @@
         <section id="order">
             <img ng-src=""/>
             <div id="total-cost">
-                <p>&#8362 100</p>
+                <img src="app/assets/images/cart_image.png"/>
+                <p>{{total_price}}</p>
+                <p>&#8362</p>
             </div>
             <p id="order-title">סל הקניות</p>
             <hr/>
+            <div id="order-button">
+                <p>הזמן</p>
+            </div>
         </section>
+        
+<!--        ng-view-->
         <section id="dishes">
             <ng-view></ng-view>
         </section>

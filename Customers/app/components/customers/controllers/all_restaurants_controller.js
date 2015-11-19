@@ -152,4 +152,6 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                 }
             );
         };
+        
+        
 }]);

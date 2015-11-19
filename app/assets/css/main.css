@@ -1,0 +1,48 @@
+#navigation-bar {
+    border-radius: 2px;
+    background-color: rgb(56, 149, 95);
+    height: 95px;
+}
+
+#nav-logo {
+    width: 211px;
+    margin-right: 45px;
+    margin-top: -8px;
+    display: inline-block;
+    float: right;
+    margin-left: 20px
+}
+
+.nav-button {
+    color: white;
+    display: inline-block;
+    font-size: 25px;
+    font-family: "Open Sans Hebrew";
+    color: rgb(255, 255, 255);
+    line-height: 1.115;
+    float: right;
+    margin-top: 35px;
+    margin-left: 25px;
+}
+
+.nav-button:hover {
+/*    background-color: rgb(56, 149, 95);*/
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.nav-button-active {
+    background-color: rgba(0,0,0,0.5);
+}
+
+#welcome-guest {
+    display: inline-block;
+    float: left;
+    font-size: 25px;
+    font-family: "Open Sans Hebrew";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.115;
+    margin-top: 35px;
+    margin-left: 60px;
+}

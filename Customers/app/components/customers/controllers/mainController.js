@@ -76,6 +76,10 @@ myApp.controller('MainCtrl', ['$scope',
         }
         
         $scope.submit_order = function(order) {
-            toastr["success"]("My name is Inigo Montoya. You killed my father. Prepare to die!")
+            toastr.options = {
+                "positionClass": "toast-bottom-right"
+            };
+            toastr["success"]("You ordered an awesome dish!");
+            
         }
 }]);

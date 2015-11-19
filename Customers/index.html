@@ -13,18 +13,14 @@
     <link rel="stylesheet" href="app/assets/css/app.css">
     <link rel="stylesheet" href="app/assets/css/main.css">
     <link rel="stylesheet" href="app/assets/css/animate.css">
+    <link rel="stylesheet" href="app/assets/css/all_restaurants.css">
     <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.css"/>
     <link rel="styleSheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+<!--      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">-->
 
   </head>
   <body ng-controller="MainCtrl">
         <header>
-<!--
-          <md-toolbar layout="row" layout-align="start center">
-            <h2 flex="90" class="md-toolbar-tools"> {{title}} </h2>
-            <md-button flex="10" ng-click="showAdvanced($event)" ng-model="accountDetails" ng-disabled="!(accountDetails['firstName'] === undefined)">שלום {{accountDetails.firstName === undefined ? "אורח": accountDetails.firstName}}!</md-button>
-          </md-toolbar>
--->
             <div id="navigation-bar">
                 <img id="nav-logo" src="app/assets/images/get_eat_logo.png"/>
                 <div ng-class="{'nav-button-active': active_classes.all_dishes}" class="nav-button" ng-click="showAllDishes()">הכל</div>
@@ -77,6 +73,7 @@
 
 
         <!-- Angular Material Javascript now available via Google CDN; version 0.11.2 used here -->
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <!-- Angular Material Dependencies -->
@@ -86,7 +83,7 @@
 
     <!--&lt;!&ndash; Angular Material Javascript using GitCDN to load directly from `bower-material/master` &ndash;&gt;-->
     <!--<script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>-->
-
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>-->
     <script defer src="app/assets/libs/angular-route/angular-route.min.js"></script>
     <script defer src="app/assets/libs/angular-loading-bar-master/build/loading-bar.min.js"></script>
 

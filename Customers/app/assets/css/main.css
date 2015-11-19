@@ -131,6 +131,60 @@ hr {
     line-height: 1.115;
 }
 
+#items-in-cart {
+    
+}
+
+#items-in-cart div p {
+    display: inline-block;
+}
+
+#item-title-skeleton {
+    font-size: 20px;
+    font-family: "Open Sans Hebrew";
+    color: rgb(33, 118, 69);
+    line-height: 1.115;
+    margin-right: 30px;
+    border-width: 1.5px;
+    border-color: rgb(61, 177, 110);
+    border-style: dashed;
+    border-radius: 9px;
+    padding: 5px;
+    display: inline-block;
+}
+
+#item-in-cart-title #item-delete{
+    position: relative;
+    bottom: 15px;
+}
+
+#item-ordered-extras {
+    display: inline-block;
+}
+
+#item-delete {
+    font-size: 20px;
+    font-family: "Open Sans Hebrew";
+    color: rgb(33, 118, 69);
+    font-weight: bold;
+    line-height: 1.115;
+    margin-right: 10px;
+}
+
+#item-delete:hover {
+    cursor: pointer;
+}
+
+.item-in-cart-price {
+    font-size: 20px;
+    font-family: "Open Sans Hebrew";
+    color: rgb(222, 41, 57);
+    font-weight: bold;
+    line-height: 1.115;
+    float: left;
+    margin-left: 50px;
+}
+
 #dishes {
     float: right;
 }

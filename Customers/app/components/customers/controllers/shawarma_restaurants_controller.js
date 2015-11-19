@@ -1,9 +1,9 @@
-﻿/**
+/**
  * Created by Amit on 9/19/2015.
  */
 'use strict';
 
-myApp.controller('customersCtrl', ['$scope',
+myApp.controller('ShawarmaRestaurantsCtrl', ['$scope',
     '$route',
     '$location',
     '$mdToast',
@@ -151,7 +151,5 @@ myApp.controller('customersCtrl', ['$scope',
                     "dish": dish
                 }
             );
-        }
-
-
+        };
 }]);

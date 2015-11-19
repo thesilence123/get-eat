@@ -46,3 +46,48 @@
     margin-top: 35px;
     margin-left: 60px;
 }
+
+#order {
+    float: left;
+    margin-left: 100px;
+    margin-top: 60px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(61, 177, 110);
+    border-radius: 1px;
+    display: inline-block;
+}
+
+#total-cost {
+    display: inline-block;
+    float: right;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+#total-cost p {
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Open Sans Hebrew";
+    font-weight: bold;
+    color: rgb(32, 127, 72);
+    line-height: 1.115;
+}
+
+#order-title {
+    font-size: 20px;
+    font-family: "Open Sans Hebrew";
+    color: rgb(33, 118, 69);
+    line-height: 1.115;
+    float: left;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+hr {
+    color: rgb(33, 118, 69);
+}
+
+#dishes {
+    float: right;
+}

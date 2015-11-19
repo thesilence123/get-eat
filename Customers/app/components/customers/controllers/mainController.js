@@ -48,9 +48,34 @@ myApp.controller('MainCtrl', ['$scope',
         
         $scope.total_price = 100;
         $scope.no_items_message = "תתחילו להוסיף מוצרים!";
-        $scope.items_in_cart = {};
+        $scope.items_in_cart = [
+            {
+                title: "פיצה בינונית",
+                extras: ['זיתים'],
+                price: 49
+            },
+            {
+                title: "כנפיים 16 יחידות",
+                extras: [],
+                price: 20
+            },
+            {
+                title: "לחם שום",
+                extras: ["גבינה", "בצל"],
+                price: 17
+            }
+        ];
+        
+        $scope.addItemToCart = function(item) {
+            $scope.items_in_cart.push(item);
+        }
+        
+        $scope.removeItemFromCart = function(item) {
+            var index = $scope.items_in_cart.indexOf(item);
+            $scope.items_in_cart.splice(index, 1);
+        }
         
         $scope.submit_order = function(order) {
-            alert('Congrats! Food food food!')
+            toastr["success"]("My name is Inigo Montoya. You killed my father. Prepare to die!")
         }
 }]);

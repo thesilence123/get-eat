@@ -10,8 +10,9 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
     '$document',
     'customersService',
     '$mdDialog',
+
     function ($scope, $route, $location, $mdToast, $document, customersService,
-    $mdDialog) {
+    $mdDialog, $rootScope) {
 
         $scope.showMenu = function(ev) {
             $mdDialog.show({
@@ -44,8 +45,10 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                 $mdDialog.hide(answer);
             };
             console.log(mainDishes);
-            //$scope.mainDishes = mainDishes;
-            //$scope.toppings = toppings;
+            $scope.mainDishes = mainDishes;
+            $scope.toppings = toppings;
+            $scope.mainDish = '1';
+            $scope.toppingsSelected = [false, false, false, false, false];
         }
         $scope.showSimpleToast = function() {
             $mdToast.show(

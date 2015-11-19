@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+<md-button ng-click="showMenu($event)" class="md-warn">menu</md-button>
+=======
+<div class="row">
+</div>
+<div class="row">
+</div>
+>>>>>>> 2c8e7053b78e8848495e0373ce0e0d75dc10ae5c

@@ -3,11 +3,7 @@
  */
 'use strict';
 myApp.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/businesses', {
-        templateUrl: 'app/components/business/orders.html',
-        controller: 'businessCtrl'
-    })
-        .when('/customers', {
+    $routeProvider.when('/customers', {
             templateUrl: 'app/components/customers/restaurants.html',
             controller: 'customersCtrl'
         })

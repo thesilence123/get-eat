@@ -14,32 +14,79 @@
     <link rel="stylesheet" href="app/assets/css/main.css">
     <link rel="stylesheet" href="app/assets/css/animate.css">
     <link rel="styleSheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.css"/>
-
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   </head>
   <body>
-        <header>
-<!--
-          <md-toolbar layout="row" layout-align="start center">
-            <h2 flex="90" class="md-toolbar-tools"> {{title}} </h2>
-            <md-button flex="10" ng-click="showAdvancedLogin($event)" ng-model="accountDetails" ng-disabled="!(accountDetails['firstName'] === undefined)">שלום {{accountDetails.firstName === undefined ? "אורח": accountDetails.firstName}}!</md-button>
-          </md-toolbar>
--->
-            <div id="navigation-bar">
-                <img id="nav-logo" src="app/assets/images/get_eat_logo.png"/>
-                <div class="nav-button" ng-click="showAllDishes()">הכל</div>
-                <div class="nav-button" ng-click="showPizzaDishes()">פיצה</div>
-                <div class="nav-button" ng-click="showHummusDishes()">חומוס</div>
-                <div class="nav-button" ng-click="showFalafelDishes()">פלאפל</div>
-                <div class="nav-button" ng-click="showShwarmaDishes()">שווארמה</div>
-                <p id="welcome-guest">שלום עמית</p>
-            </div>
-        </header>
-        <ng-view></ng-view>
+  <header>
+      <div id="navigation-bar">
+          <img id="nav-logo" src="app/assets/images/get_eat_logo.png"/>
+          <div ng-class="{'nav-button-active': active_classes.all_dishes}" class="nav-button" ng-click="showAllDishes()">הכל</div>
+          <div ng-class="{'nav-button-active': active_classes.pizza}" class="nav-button" ng-click="showPizzaDishes()">פיצה</div>
+          <div ng-class="{'nav-button-active': active_classes.hummus}" class="nav-button" ng-click="showHummusDishes()">חומוס</div>
+          <div ng-class="{'nav-button-active': active_classes.falafel}" class="nav-button" ng-click="showFalafelDishes()">פלאפל</div>
+          <div ng-class="{'nav-button-active': active_classes.shawarma}" class="nav-button" ng-click="showShawarmaDishes()">שווארמה</div>
+          <p id="welcome-guest">אבי</p>
+      </div>
+  </header>
+  <div id="latest-orders" style="margin-bottom: 300px;">
+      <div><img style="display:inline-block" src="app/assets/images/box.png" /></div>
+      <div><img style="display:inline-block" src="app/assets/images/box.png" /></div>
+      <div><img style="display:inline-block" src="app/assets/images/box.png" /></div>
+  </div>
 
+  <script type="text/javascript">
+      $( document ).ready(function() {
+          ClearTable();
+          GetOrders2();
+      });
+      setInterval(function(){
+          ClearTable();
+          GetOrders2();
+      }, 5000);
+      function ClearTable(){
+          $("#older-orders tbody tr").remove();
+      }
+      function GetOrders2(){
+          var ordersArr = [];
+          $.ajax({
+              method: "GET",
+              url: "https://api.backand.com:443/1/objects/order?pageSize=20&pageNumber=1",
+              headers: {"AnonymousToken": "63529d36-5c14-4a0c-b3d1-1336c1401cf3"},
+              contentType: 'text/html; charset=UTF-8',
+              async: false,
+              success: function(response)
+              {
+                  var idsArr = response.data;
+                  for (var i = 0; i < idsArr.length; i++) {
+                      $.ajax({
+                          method: "GET",
+                          url: "https://api.backand.com:443/1/objects/order/"+ idsArr[i].id+"?deep=true",
+                          headers: {"AnonymousToken": "63529d36-5c14-4a0c-b3d1-1336c1401cf3"},
+                          async: false,
+                          success : function(resp){
+                              console.log(resp)
+                              $("#older-orders").prepend("<tr><td>"+ resp.time.substring(11) +"</td><td>"+ resp.dishes[0].name + "</td><td></td><td>"+ resp.address +"</td><td>0506666666</td></tr>")
+                          }
+                      })
+                  }
+              }
+          });
+          return ordersArr;
+      }
+  </script>
+    <table id="older-orders" style="border-spacing: 0;width:90%; margin-top:100px;text-align: right;margin: 0 auto 0 auto;" >
+        <thead>
+            <th style="vertical-align: middle;"><img src="app/assets/images/clock.png" style="width:auto;height:32px;"/> תאריך </th>
+            <th><img src="app/assets/images/burger.png" style="width:auto;height:32px;"/> מנה </th>
+            <th><img src="app/assets/images/sticky-note.png" style="width:auto;height:32px;"/> הערות </th>
+            <th><img src="app/assets/images/map-.png" style="width:auto;height:32px;"/> כתובת </th>
+            <th><img src="app/assets/images/phone.png" style="width:auto;height:32px;"/> טלפון </th>
+        </thead>
+        <tbody style="background-color: #eef0ee;border-color:black;border-radius:5px;">
 
-
-
-
+        </tbody>
+    </table>
+  <ng-view></ng-view>
         <!-- Angular Material Dependencies -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
@@ -62,10 +109,6 @@
     <script defer src="app/app.js"></script>
     <script defer src="app/app.routes.js"></script>
     <script defer src="app/shared/Home/homeController.js"></script>
-    <script defer src="app/components/customers/customersService.js"></script>
-    <script defer src="app/components/customers/customersController.js"></script>
-    <script defer src="app/components/business/businessService.js"></script>
-    <script defer src="app/components/business/businessController.js"></script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.0.7/ui-grid.min.js"></script>
     <script defer src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>

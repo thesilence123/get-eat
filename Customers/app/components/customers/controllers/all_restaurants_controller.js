@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Amit on 9/19/2015.
  */
 'use strict';
@@ -10,8 +10,63 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
     '$document',
     'customersService',
     '$mdDialog',
+
     function ($scope, $route, $location, $mdToast, $document, customersService,
-    $mdDialog) {
+    $mdDialog, $rootScope) {
+
+        $scope.showMenu = function(ev) {
+            $mdDialog.show({
+                    controller: DialogController,
+                    templateUrl: '/app/components/customers/menu.html',
+                    parent: angular.element(document.body),
+                    targetEvent: ev,
+                    clickOutsideToClose: true,
+                    locals: {
+                        mainDishes: $scope.mainDishes,
+                        toppings: $scope.toppings,
+                        pricing: $scope.pricing
+                    },
+                    bindToController: true
+                })
+                .then(function (customerDetails) {
+                }, function () {
+
+                });
+        };
+        $scope.mainDishes = ['פיצה', 'לחם שום'];
+        $scope.pricing = [49, 17];
+        $scope.toppings = ['זיתים ירוקים', 'זיתים שחורים', 'אננס', 'פפרוני', 'פטריות'];
+        function DialogController($scope, $mdDialog, mainDishes, toppings, pricing) {
+            $scope.hide = function () {
+                $mdDialog.hide();
+            };
+            $scope.cancel = function () {
+                $mdDialog.cancel();
+            };
+            $scope.answer = function (answer) {
+                $mdDialog.hide(answer);
+            };
+            console.log(mainDishes);
+            $scope.mainDishes = mainDishes;
+            $scope.toppings = toppings;
+            $scope.pricing = pricing;
+            $scope.mainDish = '1';
+            $scope.toppingsSelected = [false, false, false, false, false];
+            $scope.addToCart = function(){
+                var extras = [];
+                for (var i = 0; i< $scope.toppingsSelected.length; i++){
+                    if($scope.toppingsSelected[i] === true){
+                        extras.push($scope.toppings[i]);
+                    }
+                }
+                var item = {
+                    title: $scope.mainDishes[$scope.mainDish],
+                    extras: extras,
+                    price: $scope.pricing[$scope.mainDish]
+                };
+                $scope.addItemToCart(item);
+            }
+        }
         $scope.showSimpleToast = function() {
             $mdToast.show(
                 $mdToast.simple()
@@ -151,7 +206,7 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                     "dish": dish
                 }
             );
-        };
-        
-        
+        }
+
+
 }]);

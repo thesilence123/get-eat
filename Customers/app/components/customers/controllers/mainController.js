@@ -10,8 +10,9 @@ myApp.controller('MainCtrl', ['$scope',
     '$document',
     'customersService',
     '$mdDialog',
+    '$rootScope',
     function ($scope, $route, $location, $mdToast, $document, customersService,
-    $mdDialog) {
+    $mdDialog, $rootScope) {
         
         $scope.active_classes = {
             all_dishes: false,
@@ -48,7 +49,7 @@ myApp.controller('MainCtrl', ['$scope',
         
         $scope.total_price = 100;
         $scope.no_items_message = "תתחילו להוסיף מוצרים!";
-        $scope.items_in_cart = [
+        $rootScope.items_in_cart = [
             {
                 title: "פיצה בינונית",
                 extras: ['זיתים'],
@@ -66,11 +67,11 @@ myApp.controller('MainCtrl', ['$scope',
             }
         ];
         
-        $scope.addItemToCart = function(item) {
+        $rootScope.addItemToCart = function(item) {
             $scope.items_in_cart.push(item);
         }
         
-        $scope.removeItemFromCart = function(item) {
+        $rootScope.removeItemFromCart = function(item) {
             var index = $scope.items_in_cart.indexOf(item);
             $scope.items_in_cart.splice(index, 1);
         }
@@ -81,5 +82,12 @@ myApp.controller('MainCtrl', ['$scope',
             };
             toastr["success"]("You ordered an awesome dish!");
             
+        }
+        $scope.range = function(total){
+            var range = [];
+            for(var i=0;i<total;i++) {
+                range.push(i);
+            }
+            return range;
         }
 }]);

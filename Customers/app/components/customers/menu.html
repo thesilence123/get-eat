@@ -6,8 +6,8 @@
                     <h2>עיקריות</h2>
                 </div>
             </md-toolbar>
-                <md-radio-group ng-model="data.group1">
-                    <md-radio-button ng-repeat="dish in mainDishes" value="mainDishes.indexOf({{dish}})" class="md-primary">{{dish}}</md-radio-button>
+                <md-radio-group ng-model="mainDish">
+                    <md-radio-button ng-repeat="dish in mainDishes" value="{{indexOfDish(dish)}}" class="md-primary">{{dish}}</md-radio-button>
                 </md-radio-group>
                 <div class="md-dialog-content" layout="row" layout-align="start start">
                     <!--<md-button ng-repeat="dish in mainDishes">{{dish}}</md-button>-->

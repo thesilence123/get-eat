@@ -49,40 +49,13 @@ myApp.controller('MainCtrl', ['$scope',
         
         $scope.total_price = 100;
         $scope.no_items_message = "תתחילו להוסיף מוצרים!";
-        $rootScope.items_in_cart = [
-            {
-                title: "פיצה בינונית",
-                extras: ['זיתים'],
-                price: 49
-            },
-            {
-                title: "כנפיים 16 יחידות",
-                extras: [],
-                price: 20
-            },
-            {
-                title: "לחם שום",
-                extras: ["גבינה", "בצל"],
-                price: 17
-            }
-        ];
-        
-        $rootScope.addItemToCart = function(item) {
-            $scope.items_in_cart.push(item);
-        }
-        
-        $rootScope.removeItemFromCart = function(item) {
-            var index = $scope.items_in_cart.indexOf(item);
-            $scope.items_in_cart.splice(index, 1);
-        }
-        
         $scope.submit_order = function(order) {
             toastr.options = {
                 "positionClass": "toast-bottom-right"
             };
             toastr["success"]("You ordered an awesome dish!");
-            
-        }
+
+        };
         $scope.range = function(total){
             var range = [];
             for(var i=0;i<total;i++) {

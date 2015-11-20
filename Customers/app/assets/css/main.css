@@ -1,0 +1,197 @@
+.page {
+    width:90%;
+    margin: 0 auto;"
+}
+
+#navigation-bar {
+    border-radius: 2px;
+    background-color: rgb(56, 149, 95);
+    height: 6em;
+    box-shadow: 0px 3px 5px 0px rgba(34, 31, 24, 0.22);
+}
+
+#nav-logo {
+    width: 13em;
+    margin-right: 3.5em;
+    margin-top: -0.4em;
+    display: inline-block;
+    float: right;
+    margin-left: 1.7em;
+}
+
+.nav-button {
+    color: white;
+    display: inline-block;
+    font-size: 1.6em;
+    font-family: "Open Sans Hebrew";
+    color: rgb(255, 255, 255);
+    line-height: 1.115;
+    float: right;
+    margin-top: 1.4em;
+    margin-left: 1em;
+}
+
+.nav-button:hover {
+    background-color: rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.nav-button-active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+#welcome-guest {
+    display: inline-block;
+    float: left;
+    font-size: 1.6em;
+    font-family: "Open Sans Hebrew";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.115;
+    margin-top: 1.4em;
+    margin-left: 2.5em;
+}
+
+#order {
+    width:35%;
+    float: left;
+    margin-top:1em;
+    margin-right: 3em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(61, 177, 110);
+    border-radius: 3px;
+    display: inline-block;
+}
+
+#total-cost {
+    display: inline-block;
+    float: right;
+    margin-left: 13em;
+    margin-right: 1em;
+}
+
+#total-cost img {
+    float:right;
+    display: inline-block;
+    margin-left: 0.4em;
+    margin-top: 1.465em;
+}
+
+#total-cost p {
+    display: inline-block;
+    font-size: 1.6em;
+    font-family: "Open Sans Hebrew";
+    font-weight: bold;
+    color: rgb(32, 127, 72);
+    line-height: 1.115;
+}
+
+#order-title {
+    font-size: 1.6em;
+    font-family: "Open Sans Hebrew";
+    font-weight: lighter;
+    color: rgb(33, 118, 69);
+    line-height: 1.115;
+    float: left;
+    display: inline-block;
+    margin-left: 0.6em;
+}
+
+hr {
+    color: rgb(33, 118, 69);
+}
+
+#order-button {
+    border-radius: 1px;
+    background-color: rgb(222, 41, 57);
+    box-shadow: 0px 2px 3px 0px rgba(34, 31, 24, 0.38);
+    display: inline-block;
+    float: left;
+    margin-left: 0.7em;
+    margin-bottom: 1.3em;
+    margin-top: 1.3em;
+    padding: 0px 1.5em;
+    height: 2.6em;
+}
+
+#order-button:hover {
+    cursor: pointer;
+    background-color: rgba(222, 41, 57, 0.9);
+}
+
+#order-button p {
+    font-size: 1.6em;
+    font-family: "Open Sans Hebrew";
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.115;
+    position: relative;
+    bottom: 0.7em
+}
+
+#no-items {
+    font-size: 1.3em;
+    font-family: "Open Sans Hebrew";
+    color: rgb(24, 100, 56);
+    line-height: 1.115;
+}
+
+#items-in-cart {
+    
+}
+
+#items-in-cart div p {
+    display: inline-block;
+}
+
+#item-title-skeleton {
+    font-size: 1.1em;
+    font-family: "Open Sans Hebrew";
+    color: rgb(33, 118, 69);
+    line-height: 1.115;
+    margin-right: 1em;
+    border-width: 1.5px;
+    border-color: rgb(61, 177, 110);
+    border-style: dashed;
+    border-radius: 9px;
+    padding: 0.2em;
+    display: inline-block;
+}
+
+#item-in-cart-title #item-delete{
+    position: relative;
+    bottom: 1em;
+}
+
+#item-ordered-extras {
+    display: inline-block;
+}
+
+#item-delete {
+    font-size: 1.1em;
+    font-family: "Open Sans Hebrew";
+    color: rgb(33, 118, 69);
+    font-weight: bold;
+    line-height: 1.115;
+    margin-right: 0.4em;
+}
+
+#item-delete:hover {
+    cursor: pointer;
+}
+
+.item-in-cart-price {
+    font-size: 1.3em;
+    font-family: "Open Sans Hebrew";
+    color: rgb(222, 41, 57);
+    font-weight: bold;
+    line-height: 1.115;
+    float: left;
+    margin-left: 1.5em;
+}
+
+#dishes {
+    width:60%;
+    float: right;
+}

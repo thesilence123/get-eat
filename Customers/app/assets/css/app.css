@@ -1,0 +1,83 @@
+/* app css stylesheet */
+
+.h1 {
+  display: block;
+  text-align: center;
+  font-size: 3em;
+}
+#main-title:hover, #main-title:focus{
+  color: black;
+  text-decoration: none;
+}
+#being-built {
+  font-size: 1.5em;
+  color: red;
+  /*transform: rotate(-10deg);*/
+  /*float: right;*/
+
+}
+footer{
+  text-align: center;
+}
+.center {
+  text-align: center;
+}
+
+.vs {
+  height: 70%;
+  width: 70%;
+}
+.webstorm {
+  height: 40%;
+  width: 40%;
+}
+.angular {
+  height: 70%;
+  width: 70%;
+}
+.python {
+  height: 100%;
+  width: 100%;
+}
+md-grid-list {
+  margin: 8px; }
+.gray {
+  background: #f5f5f5; }
+.green {
+  background: #b9f6ca; }
+.yellow {
+  background: #ffff8d; }
+.blue {
+  background: #84ffff; }
+.purple {
+  background: #b388ff; }
+.red {
+  background: #ff8a80; }
+md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+md-button:hover{
+  color: red;
+}
+.italic {
+  font-style: italic;
+}
+.shoppingCart {
+  position: fixed;
+}
+.restaurant-logo{
+  width:66%;
+  height: auto;
+  display: inline-block;
+}
+.myGrid {
+  width: 500px;
+  height: 500px;
+}
+md-toast.md-success-toast-theme {
+  background-color: red;
+}
+
+* {
+  font-family: "sans-serif" !important;
+}

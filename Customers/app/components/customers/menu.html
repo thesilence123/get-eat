@@ -1,0 +1,42 @@
+<md-dialog aria-label="Mango (Fruit)"  ng-cloak layout="column" layout-align="start start">
+
+    <md-dialog-content flex-order="1"  style="min-width:400px;max-width:500px;max-height:810px; ">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>עיקריות</h2>
+                </div>
+            </md-toolbar>
+                <md-radio-group ng-model="mainDish">
+                    <md-radio-button ng-repeat="dish in mainDishes" value="{{indexOfDish(dish)}}" class="md-primary">{{dish}}</md-radio-button>
+                </md-radio-group>
+                <div class="md-dialog-content" layout="row" layout-align="start start">
+                    <!--<md-button ng-repeat="dish in mainDishes">{{dish}}</md-button>-->
+                    <!--<p>-->
+                </div>
+            <md-divider></md-divider>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>תוספות</h2>
+                </div>
+            </md-toolbar>
+                <div class="md-dialog-content" layout="row" layout-align="start start">
+                    <md-checkbox ng-repeat="topping in toppings" md-no-ink ng-model="toppingsSelected[$index]" aria-label="No Ink Effects">
+                        {{topping}}
+                    </md-checkbox>
+
+                    <p>
+                </div>
+    </md-dialog-content>
+    <md-dialog-actions flex-order="2" layout="row">
+        <md-button ng-click="addToCart()" md-autofocus>
+            הוסף מנה
+        </md-button>
+        <span flex></span>
+        <md-button ng-click="answer('not useful')">
+            סיים
+        </md-button>
+        <!--<md-button ng-click="answer('useful')" style="margin-right:20px;">-->
+            <!--Useful-->
+        <!--</md-button>-->
+    </md-dialog-actions>
+</md-dialog>

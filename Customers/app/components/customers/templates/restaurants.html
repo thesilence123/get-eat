@@ -1,0 +1,38 @@
+<article layout="row" layout-sm="column" layout-align="start start">
+    <md-button ng-click="showMenu($event)"></md-button>
+    <!--<md-button ng-click="showMenu($event)"></md-button>-->
+    <section flex="70" flex-order-sm="2" layout="row" layout-align="start start">
+        <div class='md-padding' layout="row" layout-wrap>
+            <md-card flex-sm="100" flex="30" ng-repeat="restaurant in restaurants">
+                <img class="restaurant-logo" ng-src="{{restaurant.logo}}" class="md-card-image" alt="Washed Out">
+                <md-card-content>
+                    <h2 class="md-title">{{restaurant.displayName}}</h2>
+
+                    <p>{{restaurant.description}}</p>
+                    <p class="italic">{{restaurant.address}}</p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="start start">
+                    <md-button flex="5" class="md-primary md-hue-2" ng-repeat="dish in restaurant.dishes"
+                            ng-click="addOrder(restaurant.name, restaurant.displayName, dish.name)">{{dish.name}}</md-button>
+                </md-card-actions>
+            </md-card>
+
+        </div>
+
+    </section>
+    <section flex="30" flex-order-sm="1" ng-class="shoppingCart">
+        <md-card id="shopping-cart-card">
+            <md-card-content>
+                <h2 class="md-title">עגלת קניות:</h2>
+                <md-chips ng-model="orders" readonly="false" placeholder="עוד רעב?"
+                          secondary-placeholder="העגלה ריקה... מה בא לך?">
+                    <md-chip-template>
+                        <strong>{{$chip["dish"]}}</strong>
+                        <em>({{$chip["restaurantDisplayName"]}})</em>
+                    </md-chip-template>
+                </md-chips>
+                <md-button ng-click="order($event)" class="md-warn md-raised">הזמן!</md-button>
+            </md-card-content>
+        </md-card>
+    </section>
+</article>

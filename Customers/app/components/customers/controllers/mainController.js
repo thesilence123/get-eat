@@ -83,7 +83,7 @@ myApp.controller('MainCtrl', ['$scope',
             toastr["success"]("You ordered an awesome dish!");
             
         }
-        $scope.range = function(number){
+        $scope.range = function(total){
             var range = [];
             for(var i=0;i<total;i++) {
                 range.push(i);

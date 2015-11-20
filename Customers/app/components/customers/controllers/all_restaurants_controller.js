@@ -23,7 +23,8 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                     clickOutsideToClose: true,
                     locals: {
                         mainDishes: $scope.mainDishes,
-                        toppings: $scope.toppings
+                        toppings: $scope.toppings,
+                        pricing: $scope.pricing
                     },
                     bindToController: true
                 })
@@ -33,8 +34,9 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                 });
         };
         $scope.mainDishes = ['פיצה', 'לחם שום'];
+        $scope.pricing = [49, 17];
         $scope.toppings = ['זיתים ירוקים', 'זיתים שחורים', 'אננס', 'פפרוני', 'פטריות'];
-        function DialogController($scope, $mdDialog, mainDishes, toppings) {
+        function DialogController($scope, $mdDialog, mainDishes, toppings, pricing) {
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -47,8 +49,23 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
             console.log(mainDishes);
             $scope.mainDishes = mainDishes;
             $scope.toppings = toppings;
+            $scope.pricing = pricing;
             $scope.mainDish = '1';
             $scope.toppingsSelected = [false, false, false, false, false];
+            $scope.addToCart = function(){
+                var extras = [];
+                for (var i = 0; i< $scope.toppingsSelected.length; i++){
+                    if($scope.toppingsSelected[i] === true){
+                        extras.push($scope.toppings[i]);
+                    }
+                }
+                var item = {
+                    title: $scope.mainDishes[$scope.mainDish],
+                    extras: extras,
+                    price: $scope.pricing[$scope.mainDish]
+                };
+                $scope.addItemToCart(item);
+            }
         }
         $scope.showSimpleToast = function() {
             $mdToast.show(

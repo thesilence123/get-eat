@@ -1,3 +1,8 @@
+.page {
+    width:90%;
+    margin: 0 auto;"
+}
+
 #navigation-bar {
     border-radius: 2px;
     background-color: rgb(56, 149, 95);
@@ -48,7 +53,8 @@
 }
 
 #order {
-    float: right;
+    width:35%;
+    float: left;
     margin-top:1em;
     margin-right: 3em;
     border-style: solid;
@@ -186,5 +192,6 @@ hr {
 }
 
 #dishes {
+    width:60%;
     float: right;
 }

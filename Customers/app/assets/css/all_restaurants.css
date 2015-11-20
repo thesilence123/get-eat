@@ -3,57 +3,14 @@
     float: right;
     margin-right: 1.3em;
     margin-top: 1em;
+    width:30%;
 }
 
 .restaurant:hover {
+    opacity: 0.5;
     cursor: pointer;
+    -webkit-transation-duration: 0.5s; /* Chrome, Safari, Opera */
+    transation-duration: 0.5s;
 }
 
-#pizza_rami {
-    background: url("../../assets/images/pizza_rami.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 17em;
-    height: 17em;
-}
-
-#pizza_rami:hover {
-    background-image: url("../../assets/images/pizza_rami_hover.png")
-}
-
-#falafel_local {
-    background: url("../../assets/images/falafel_local.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 17em;
-    height: 17em;
-}
-
-#falafel_local:hover {
-    background-image: url("../../assets/images/falafel_local_hover.png")
-}
-
-#falafel_yossi {
-    background: url("../../assets/images/falafel_yossi.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 17em;
-    height: 17em;
-}
-
-#falafel_yossi:hover {
-    background-image: url("../../assets/images/falafel_yossi_hover.png")
-}
-
-#hummus_telaviv {
-    background: url("../../assets/images/hummus_telaviv.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 17em;
-    height: 17em;
-}
-
-#hummus_telaviv:hover {
-    background-image: url("../../assets/images/hummus_telaviv_hover.png")
-}
 

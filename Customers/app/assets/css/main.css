@@ -53,9 +53,9 @@
 }
 
 #order {
-    width: 35%;
+    width:35%;
     float: left;
-    margin-top: 1.8em;
+    margin-top:1em;
     margin-right: 3em;
     border-style: solid;
     border-width: 2px;
@@ -64,15 +64,11 @@
     display: inline-block;
 }
 
-#order-header {
-    width:100%;
-}
-
 #total-cost {
     display: inline-block;
     float: right;
+    margin-left: 13em;
     margin-right: 1em;
-    width: 70%;
 }
 
 #total-cost img {
@@ -104,7 +100,6 @@
 
 hr {
     color: rgb(33, 118, 69);
-    width:100%;
 }
 
 #order-button {

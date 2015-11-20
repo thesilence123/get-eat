@@ -35,14 +35,13 @@
 
         <div class="page">
             <div id="order">
-                <div id="order-header">
-                    <div id="total-cost">
-                        <img src="app/assets/images/cart_image.png"/>
-                        <p>{{total_price}}</p>
-                        <p>&#8362</p>
-                    </div>
-                    <p id="order-title">סל הקניות</p>
+                <img ng-src=""/>
+                <div id="total-cost">
+                    <img src="app/assets/images/cart_image.png"/>
+                    <p>{{total_price}}</p>
+                    <p>&#8362</p>
                 </div>
+                <p id="order-title">סל הקניות</p>
                 <hr/>
                 <div id="items-in-cart">
                     <p ng-if="items_in_cart.length == 0" id="no-items">{{no_items_message}}</p>

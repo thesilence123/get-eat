@@ -71,6 +71,7 @@ md-button:hover{
   display: inline-block;
 }
 .myGrid {
+  margin-top:300px;
   width: 500px;
   height: 500px;
 }

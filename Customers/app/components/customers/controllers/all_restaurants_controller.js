@@ -13,7 +13,26 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
 
     function ($scope, $route, $location, $mdToast, $document, customersService,
     $mdDialog, $rootScope) {
+        function CreateOrder(order){
+            var json = JSON.stringify(order);
+            $.ajax({
+                method: "POST",
+                url : "https://api.backand.com:443/1/objects/order?deep=true",
+                headers: {"AnonymousToken": "63529d36-5c14-4a0c-b3d1-1336c1401cf3"},
+                contentType: 'text/html; charset=UTF-8',
+                data: json
 
+            });
+            console.debug(order);
+            $.ajax({
+                method: "GET",
+                url: 'https://api.backand.com/1/objects/action/order/?name=notifySeller&parameters=%7B%22order%22:%22%7B%20%20%20%5C%22id%5C%22:%2052,%20%20%20%5C%22restaurant%5C%22:%20%5C%22%D7%A4%D7%99%D7%A6%D7%94%5C%22,%20%20%20%5C%22dishes%5C%22:%20%5B%20%20%20%20%20%7B%20%20%20%20%20%20%20%5C%22id%5C%22:%202,%20%20%20%20%20%20%20%5C%22name%5C%22:%20%5C%22Pizza%5C%22,%20%20%20%20%20%20%20%5C%22price%5C%22:%2020,%20%20%20%20%20%20%20%5C%22extras%5C%22:%20%5C%22Onion%5C%22,%20%20%20%20%20%20%20%5C%22order%5C%22:%20%7B%20%20%20%20%20%20%20%20%20%5C%22id%5C%22:%2052,%20%20%20%20%20%20%20%20%20%5C%22restaurant%5C%22:%20%5C%22Pizzhackthon%5C%22,%20%20%20%20%20%20%20%20%20%5C%22address%5C%22:%20%5C%22ashalim%5C%22,%20%20%20%20%20%20%20%20%20%5C%22time%5C%22:%20%5C%222015-11-19T18:51:44%5C%22%20%20%20%20%20%20%20%7D%20%20%20%20%20%7D%20%20%20%5D,%20%20%20%5C%22drinks%5C%22:%20%5B%20%20%20%20%20%7B%20%20%20%20%20%20%20%5C%22id%5C%22:%202,%20%20%20%20%20%20%20%5C%22name%5C%22:%20%5C%22אבגד%5C%22,%20%20%20%20%20%20%20%5C%22price%5C%22:%208,%20%20%20%20%20%20%20%5C%22order%5C%22:%20%7B%20%20%20%20%20%20%20%20%20%5C%22id%5C%22:%2052,%20%20%20%20%20%20%20%20%20%5C%22restaurant%5C%22:%20%5C%22Pizzhackthon%5C%22,%20%20%20%20%20%20%20%20%20%5C%22address%5C%22:%20%5C%22ashalim%5C%22,%20%20%20%20%20%20%20%20%20%5C%22time%5C%22:%20%5C%222015-11-19T18:51:44%5C%22%20%20%20%20%20%20%20%7D%20%20%20%20%20%7D%20%20%20%5D,%20%20%20%5C%22address%5C%22:%20%5C%22ashalim%5C%22,%20%20%20%5C%22time%5C%22:%20%5C%222015-11-19T18:51:44%5C%22%20%7D%22%7D',
+                headers: {"AnonymousToken": "63529d36-5c14-4a0c-b3d1-1336c1401cf3"},
+                success: function(response){
+
+                }
+            })
+        };
         $scope.showMenu = function(ev) {
             $mdDialog.show({
                     controller: DialogController,
@@ -92,7 +111,7 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                 $scope.showAdvancedLogin(ev)
             } else {
                 customersService.postOrder($scope.orders).then(function (data) {
-
+                    CreateOrder($rootScope.i)
                 }, function () {
                     // TODO: Show toast error
                 });

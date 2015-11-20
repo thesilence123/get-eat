@@ -36,7 +36,7 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
         $scope.mainDishes = ['פיצה', 'לחם שום'];
         $scope.pricing = [49, 17];
         $scope.toppings = ['זיתים ירוקים', 'זיתים שחורים', 'אננס', 'פפרוני', 'פטריות'];
-        function DialogController($scope, $mdDialog, mainDishes, toppings, pricing) {
+        function DialogController($scope, $mdDialog, mainDishes, toppings, pricing, $rootScope) {
             $scope.hide = function () {
                 $mdDialog.hide();
             };
@@ -50,7 +50,10 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
             $scope.mainDishes = mainDishes;
             $scope.toppings = toppings;
             $scope.pricing = pricing;
-            $scope.mainDish = '1';
+            $scope.mainDish = '0';
+            $scope.indexOfDish = function(dish){
+                return mainDishes.indexOf(dish);
+            };
             $scope.toppingsSelected = [false, false, false, false, false];
             $scope.addToCart = function(){
                 var extras = [];
@@ -59,12 +62,17 @@ myApp.controller('AllRestaurantsCtrl', ['$scope',
                         extras.push($scope.toppings[i]);
                     }
                 }
+                console.log($scope.mainDishes);
+                console.log($scope.mainDish);
+
+                console.log($scope.mainDishes[$scope.mainDish]);
                 var item = {
                     title: $scope.mainDishes[$scope.mainDish],
                     extras: extras,
                     price: $scope.pricing[$scope.mainDish]
                 };
-                $scope.addItemToCart(item);
+                $rootScope.addItemToCart(item);
+                $scope.answer('Added');
             }
         }
         $scope.showSimpleToast = function() {

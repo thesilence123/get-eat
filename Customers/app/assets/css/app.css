@@ -77,3 +77,7 @@ md-button:hover{
 md-toast.md-success-toast-theme {
   background-color: red;
 }
+
+* {
+  font-family: "sans-serif" !important;
+}

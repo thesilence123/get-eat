@@ -47,7 +47,7 @@
                     <p ng-if="items_in_cart.length == 0" id="no-items">{{no_items_message}}</p>
                     <div ng-repeat="item in items_in_cart">
                         <div id="item-title-skeleton">
-                            <p id="item-in-cart-title">{{item.title}}</p>
+                            <p id="item-in-cart-title">{{item.name}}</p>
                             <div id="item-ordered-extras" ng-if="item.extras.length > 0">
                                 <p>(</p>
                                 <p ng-repeat="extra in item.extras">{{extra}}</p>

@@ -11,21 +11,6 @@ var myApp = angular.module('myApp', [
 ])
     .run(['$rootScope', function($rootScope) {
         $rootScope.items_in_cart = [
-            {
-                title: "פיצה בינונית",
-                extras: ['זיתים'],
-                price: 49
-            },
-            {
-                title: "כנפיים 16 יחידות",
-                extras: [],
-                price: 20
-            },
-            {
-                title: "לחם שום",
-                extras: ["גבינה", "בצל"],
-                price: 17
-            }
         ];
 
         $rootScope.addItemToCart = function(item) {
